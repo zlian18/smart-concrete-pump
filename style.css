@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "tailwindcss";
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: 0.9em;
+  line-height: 23px;
+}
+
+li {
+  font-size: .9em;
+}
+
+nav a:hover {
+  color: black;
+}
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 2em 1em;
+}
+
+.section.split {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section .photo {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin-left: 1em;
+}
+
+.banner {
+  position: relative;
+  background-image: url("./images/concrete_bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.contact-banner {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background: var(--color-blue-500);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.features .feature {
+  border: 1px solid #ddd;
+  justify-content: space-between;
+  margin: 1.3rem 0;
+  max-width: 280px;
+  @apply shadow-md rounded;
+}
+
+.feature div {
+  height: 10em;
+}
+
+.feature h3 {
+  font-size: 1.5rem;
+  margin: 1rem;
+  font-weight: bold;
+}
+
+.feature p {
+  margin: 1rem;
+}
+
+.features img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  max-height: 220px;
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+footer h3 {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: .8rem 0;
+}
+
+footer a {
+  font-size: .9em
+}
+
+.btn {
+  @apply font-bold py-2 px-4 rounded cursor-pointer;
+}
+
+.btn-blue {
+  @apply bg-blue-500 text-white;
+}
+
+.btn-blue:hover {
+  @apply bg-blue-700;
+}
+
+.btn-white {
+  @apply bg-white text-blue-500;
+}
+
+.btn-white:hover {
+  @apply text-white bg-blue-700;
+}
+
+.label {
+  @apply block text-gray-700 text-sm font-bold mb-2;
+}
+
+.input {
+  @apply shadow-sm appearance-none border border-gray-500 rounded w-full py-2 px-3 text-gray-700 leading-tight;
+}
+
+.input:focus {
+  @apply outline-none;
+}
+
+@media screen and (max-width: 768px) {
+  .section.split {
+    flex-direction: column;
+  }
+
+  .section .photo {
+    margin-left: 0;
+    margin-top: 1em;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
