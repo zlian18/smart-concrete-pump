@@ -1,11 +1,9 @@
-import { defineConfig } from 'vite'
-import tailwindcss from '@tailwindcss/vite'
-import multiPages from 'vite-plugin-multi-pages'
+import { defineConfig } from 'vite';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   plugins: [
     tailwindcss(),
-    multiPages(),
   ],
   base: './',  // Ensures correct relative paths for assets
   build: {
@@ -20,5 +18,5 @@ export default defineConfig({
       }
     },
     outDir: 'dist',  // Default output folder
-    }
-  })
+  }
+});
