@@ -41,6 +41,6 @@ if (submitBtn) {
     );
 
     // Open mail client
-    window.location.href = `mailto:fushijing0105@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:smartconcretepumping@gmail.com?subject=${subject}&body=${body}`;
   });
 }
