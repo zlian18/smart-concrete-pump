@@ -26,6 +26,8 @@ document.getElementById("bookingForm").addEventListener("submit", function(e) {
   // Validation
   document.getElementById("nameError").classList.add("hidden");
   document.getElementById("phoneError").classList.add("hidden");
+  document.getElementById("emailError").classList.add("hidden");
+  document.getElementById("addressError").classList.add("hidden");
 
   if (!name) {
     document.getElementById("nameError").classList.remove("hidden");
@@ -33,6 +35,14 @@ document.getElementById("bookingForm").addEventListener("submit", function(e) {
   }
   if (!phone) {
     document.getElementById("phoneError").classList.remove("hidden");
+    isValid = false;
+  }
+  if (!email) {
+    document.getElementById("emailError").classList.remove("hidden");
+    isValid = false;
+  }
+  if (!address) {
+    document.getElementById("addressError").classList.remove("hidden");
     isValid = false;
   }
 
