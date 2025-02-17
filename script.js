@@ -1,3 +1,5 @@
+import emailjs from "emailjs-com";
+
 document.addEventListener("DOMContentLoaded", function() {
   const toggleButton = document.querySelector("[data-collapse-toggle='navbar-default']");
   const navbarMenu = document.getElementById("navbar-default");
@@ -7,40 +9,53 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-const submitBtn = document.getElementById("submitBtn");
 
-if (submitBtn) {
-  submitBtn.addEventListener("click", function() {
-    let name = document.getElementById("name").value.trim();
-    let phone = document.getElementById("phone").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let address = document.getElementById("address").value.trim();
-    let message = document.getElementById("message").value.trim();
+emailjs.init("c4maUS76cLL4OwHWB"); // Replace with your EmailJS public key
 
-    let isValid = true;
+document.getElementById("bookingForm").addEventListener("submit", function(e) {
+  e.preventDefault();
 
-    // Validation
-    document.getElementById("nameError").classList.add("hidden");
-    document.getElementById("phoneError").classList.add("hidden");
+  let name = document.getElementById("name").value.trim();
+  let phone = document.getElementById("phone").value.trim();
+  let email = document.getElementById("email").value.trim();
+  let address = document.getElementById("address").value.trim();
+  let message = document.getElementById("message").value.trim();
 
-    if (!name) {
-      document.getElementById("nameError").classList.remove("hidden");
-      isValid = false;
-    }
-    if (!phone) {
-      document.getElementById("phoneError").classList.remove("hidden");
-      isValid = false;
-    }
+  let isValid = true;
 
-    if (!isValid) return;
+  // Validation
+  document.getElementById("nameError").classList.add("hidden");
+  document.getElementById("phoneError").classList.add("hidden");
 
-    // Construct mailto link
-    let subject = encodeURIComponent("Pump Booking Request from " + name);
-    let body = encodeURIComponent(
-      `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nAddress: ${address}\nMessage: ${message}`
-    );
+  if (!name) {
+    document.getElementById("nameError").classList.remove("hidden");
+    isValid = false;
+  }
+  if (!phone) {
+    document.getElementById("phoneError").classList.remove("hidden");
+    isValid = false;
+  }
 
-    // Open mail client
-    window.location.href = `mailto:smartconcretepumping@gmail.com?subject=${subject}&body=${body}`;
-  });
-}
+  if (!isValid) return;
+
+  const serviceID = "service_mq18pbo"; // From EmailJS
+  const templateID = "template_7mswjs7"; // From EmailJS
+
+  const params = {
+    name,
+    phone,
+    email,
+    address,
+    message,
+  };
+
+  emailjs.send(serviceID, templateID, params)
+    .then(response => {
+      alert("Email sent successfully!");
+      console.log("Success:", response);
+    })
+    .catch(error => {
+      alert("Failed to send email.");
+      console.error("Error:", error);
+    });
+});
