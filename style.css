@@ -165,6 +165,36 @@ footer a {
   @apply outline-none;
 }
 
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
+}
+
+.contact-box {
+    border: 1px solid #c1c1c1;
+    padding: 25px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    height: 13em;
+    width: 100%;
+}
+
+.contact-box h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.contact-box p {
+    margin: 5px 0 0;
+    color: #555;
+}
+
 @media screen and (max-width: 768px) {
   .section.split {
     flex-direction: column;
@@ -177,5 +207,9 @@ footer a {
 
   h1 {
     font-size: 2rem;
+  }
+
+  .contact-container {
+    flex-direction: column;
   }
 }

@@ -90,50 +90,60 @@
     </div>
   </div>
 
+
   <div class="container">
     <section class="section">
       <div>
-        <h2 class="subheader">Your Local Concrete Pumping Experts in SEQ</h2>
-        <div style="">
-          <div>Phone</div>
-          <div>Contact us for a quick quote or call us - </div>
-          <div><b>0452 155 666</b></div>
-          <div>Text Text TextText Text Text Text Text</div>
+        <h2 class="subheader">Contact Us</h2>
+        <div class="contact-container">
+          <div class="contact-box">
+            <h3>📞 Phone</h3>
+            <p><b>0452 155 666</b></p>
+            <p>Contact us for a quick quote</p>
+          </div>
+
+          <div class="contact-box">
+            <h3>⏰ Opening Hours</h3>
+            <p><b>Mon - Sat</b></p>
+            <p>We offer after hours service by appointment</p>
+          </div>
+
+          <div class="contact-box">
+            <h3>📧 Email</h3>
+            <p><b>smartconcretepumping@gmail.com</b></p>
+            <p>You may also use the below form to contact us for more specific about your project</p>
+          </div>
         </div>
-        <div></div>
-        <p><b>0452 155 666</b></p>
-        <p>Opening Hours: <b>Mon - Sat</b>, We offer after hours service by appointment</p>
-        <p>You can also email us at <b>smartconcretepumping@gmail.com</b> or use the below form to contact us for more
-          specific
-          enquiry about your project.</p>
       </div>
 
 
+      <h3 class="mt-10 mb-2" style="font-size: 1.2em;font-weight: bold;">Send us a message</h3>
       <div class="w-2xsm sm:w-sm md:w-lg">
         <form class="bg-white shadow-md rounded border border-gray-300 p-4 sm:p-6 md:p-7" id="bookingForm">
           <p class="mb-3 font-bold">Book a Pump</p>
 
           <div class="mb-4">
             <label class="label" for="name">Name*</label>
-            <input class="input" id="name" type="text" placeholder="Name">
+            <input class="input" id="name" type="text" placeholder="Name" required>
             <span class="text-red-500 text-sm hidden" id="nameError">Name is required</span>
           </div>
 
           <div class="mb-4">
             <label class="label" for="phone">Phone*</label>
-            <input class="input" id="phone" type="text" placeholder="Phone Number">
+            <input class="input" id="phone" type="tel" placeholder="Phone Number" required
+              pattern="\+?[0-9\s\-\(\)]{7,15}">
             <span class="text-red-500 text-sm hidden" id="phoneError">Phone is required</span>
           </div>
 
           <div class="mb-4">
             <label class="label" for="email">Email*</label>
-            <input class="input" id="email" type="text" placeholder="Email">
+            <input class="input" id="email" type="email" placeholder="Email" required>
             <span class="text-red-500 text-sm hidden" id="emailError">Email is required</span>
           </div>
 
           <div class="mb-4">
             <label class="label" for="address">Address*</label>
-            <input class="input" id="address" type="text" placeholder="Address">
+            <input class="input" id="address" type="text" placeholder="Address" required>
             <span class="text-red-500 text-sm hidden" id="addressError">Address is required</span>
           </div>
 
@@ -144,6 +154,7 @@
 
           <div class="flex items-center justify-between">
             <button class="btn btn-blue" type="submit" id="submitBtn">Submit</button>
+            <span id="form_send-msg"></span>
           </div>
         </form>
       </div>
@@ -166,8 +177,8 @@
       </div>
       <div>
         <h3>Contact Us</h3>
-        <div><a href="contacts">P: 0452 155 666</a></div>
-        <div><a href="contacts">E: smartconcretepumping@gmail.com</a></div>
+        <div><a href="contacts">📞 0452 155 666</a></div>
+        <div><a href="contacts">📧 smartconcretepumping@gmail.com</a></div>
       </div>
     </div>
   </footer>

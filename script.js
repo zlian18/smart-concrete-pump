@@ -33,11 +33,11 @@ document.getElementById("bookingForm").addEventListener("submit", function(e) {
     document.getElementById("nameError").classList.remove("hidden");
     isValid = false;
   }
-  if (!phone) {
+  if (!phone && !isValidPhoneNumber(phone)) {
     document.getElementById("phoneError").classList.remove("hidden");
     isValid = false;
   }
-  if (!email) {
+  if (!email && !isValidateEmail(email)) {
     document.getElementById("emailError").classList.remove("hidden");
     isValid = false;
   }
@@ -59,13 +59,37 @@ document.getElementById("bookingForm").addEventListener("submit", function(e) {
     message,
   };
 
+  const sendMsg = document.getElementById("form_send-msg");
+  // Clear the message
+  sendMsg.innerHTML = '';
+
+  // Send email
   emailjs.send(serviceID, templateID, params)
     .then(response => {
-      alert("Email sent successfully!");
-      console.log("Success:", response);
+      sendMsg.style.display = "block";
+      sendMsg.style.color = "green";
+      // Reset the form
+      this.reset();
+      document.getElementById("form_send-msg").innerHTML = "Message sent successfully!";
+      // Remove the message after 3 seconds
+      setTimeout(() => {
+        sendMsg.style.display = "none";
+      }, 5000);
     })
     .catch(error => {
-      alert("Failed to send email.");
-      console.error("Error:", error);
+      sendMsg.style.color = "red";
+      sendMsg.innerHTML = "Error sending message";
     });
 });
+
+// Email validation, return true if email is valid
+function isValidateEmail(email) {
+  const re = /\S+@\S+\.\S+/;
+  return re.test(email);
+}
+
+// Phone number validation, return true if phone number is valid
+function isValidPhoneNumber(phone) {
+  const regex = /^\+?[0-9\s\-\(\)]{7,15}$/;
+  return regex.test(phone);
+}

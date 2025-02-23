@@ -102,25 +102,25 @@
 
             <div class="mb-4">
               <label class="label" for="name">Name*</label>
-              <input class="input" id="name" name="name" type="text" placeholder="Name">
+              <input class="input" id="name" name="name" type="text" placeholder="Name" required>
               <span class="text-red-500 text-sm hidden" id="nameError">Name is required</span>
             </div>
 
             <div class="mb-4">
               <label class="label" for="phone">Phone*</label>
-              <input class="input" id="phone" name="phone" type="text" placeholder="Phone Number">
+              <input class="input" id="phone" name="phone" type="tel" placeholder="Phone Number" required pattern="\+?[0-9\s\-\(\)]{7,15}">
               <span class="text-red-500 text-sm hidden" id="phoneError">Phone is required</span>
             </div>
 
             <div class="mb-4">
               <label class="label" for="email">Email*</label>
-              <input class="input" id="email" name="email" type="text" placeholder="Email">
+              <input class="input" id="email" name="email" type="email" placeholder="Email" required>
               <span class="text-red-500 text-sm hidden" id="emailError">Email is required</span>
             </div>
 
             <div class="mb-4">
               <label class="label" for="address">Address*</label>
-              <input class="input" id="address" name="address" type="text" placeholder="Address">
+              <input class="input" id="address" name="address" type="text" placeholder="Address" required>
               <span class="text-red-500 text-sm hidden" id="addressError">Address is required</span>
             </div>
 
@@ -131,6 +131,7 @@
 
             <div class="flex items-center justify-between">
               <button class="btn btn-blue" type="submit" id="submitBtn">Submit</button>
+              <span id="form_send-msg"></span>
             </div>
           </form>
         </div>
@@ -162,7 +163,7 @@
     </div>
 
     <div class="section mt-20">
-      <h2 class="mt-5">Our Concrete Pumping is Suitable for:</h2>
+      <h2 class="mt-5">Our Concrete Pumping is Suitable for</h2>
       <div class="features">
         <div class="feature">
           <div>
@@ -212,8 +213,8 @@
       </div>
       <div>
         <h3>Contact Us</h3>
-        <div><a href="contacts">P: 0452 155 666</a></div>
-        <div><a href="contacts">E: smartconcretepumping@gmail.com</a></div>
+        <div><a href="contacts">📞 0452 155 666</a></div>
+        <div><a href="contacts">📧 smartconcretepumping@gmail.com</a></div>
       </div>
     </div>
   </footer>
