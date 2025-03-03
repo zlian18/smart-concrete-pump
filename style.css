@@ -30,14 +30,16 @@ li {
 }
 
 .logo {
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
+  width: 13em;
   display: inline-block;
 }
 
+.logo-footer {
+  width: 15em;
+}
+
 nav a:hover {
-  color: black;
+  color: #38b6ff;
 }
 
 .container {
@@ -73,7 +75,7 @@ nav a:hover {
   position: absolute;
   left: 0;
   width: 100%;
-  background: var(--color-blue-500);
+  background: #0e2442;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -138,19 +140,20 @@ footer a {
 }
 
 .btn-blue {
-  @apply bg-blue-500 text-white;
+  color: white;
+  background-color: #2a4367;
 }
 
 .btn-blue:hover {
-  @apply bg-blue-700;
+  background-color: #152f53;
 }
 
 .btn-white {
-  @apply bg-white text-blue-500;
+  @apply bg-white text-[#385173];
 }
 
 .btn-white:hover {
-  @apply text-white bg-blue-700;
+  @apply text-white bg-[#385173];
 }
 
 .label {
