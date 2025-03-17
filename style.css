@@ -30,7 +30,7 @@ li {
 }
 
 .logo {
-  width: 13em;
+  width: 15em;
   display: inline-block;
 }
 
@@ -85,7 +85,7 @@ nav a:hover {
   align-items: center;
   color: #fff;
   text-align: center;
-  height: 5em;
+  height: 6em;
 }
 
 .features {
@@ -218,5 +218,13 @@ footer a {
 
   .contact-container {
     flex-direction: column;
+  }
+  
+  .contact-banner {
+    height: 8em;
+  }
+
+  .logo {
+    margin-bottom: 5px;
   }
 }
