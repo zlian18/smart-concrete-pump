@@ -1,3 +1,3 @@
-# Business page for a concreting pumping company
+# Business page for the Smart Concrete Pumping company
 
 https://smartconcretepumping.com.au/
